@@ -32,7 +32,7 @@ jobs:
 
   # When we push to main, test everything in order to guarantee releases
   test-main-pushes:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/test'
     runs-on: "${{ matrix.os }}"
     strategy:
       matrix:
