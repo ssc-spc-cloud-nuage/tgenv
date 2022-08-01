@@ -57,6 +57,12 @@ for dir in libexec bin; do
   esac;
 done;
 
+# If on MacOS with Homebrew, use GNU grep
+# This allows keybase login detection to work on Mac,
+# and is required to be able to detect terragrunt version
+# from "required_version" setting in "*.tf" files
+check_dependencies;
+
 #####################
 # Begin Script Body #
 #####################
@@ -65,17 +71,17 @@ declare version_requested version regex min_required version_file;
 
 declare arg="${1:-""}";
 
-if [ -z "${arg}" ]; then
+if [ -z "${arg}" -a -z "${TGENV_TERRAGRUNT_VERSION:-""}" ]; then
   version_file="$(tgenv-version-file)";
   log 'debug' "Version File: ${version_file}";
 
-  if [ "${version_file}" != "${TGENV_ROOT}/version" ]; then
-    log 'debug' "Version File (${version_file}) is not the default \${TGENV_ROOT}/version (${TGENV_ROOT}/version)";
+  if [ "${version_file}" != "${TGENV_CONFIG_DIR}/version" ]; then
+    log 'debug' "Version File (${version_file}) is not the default \${TGENV_CONFIG_DIR}/version (${TGENV_CONFIG_DIR}/version)";
     version_requested="$(cat "${version_file}")" \
       || log 'error' "Failed to open ${version_file}";
 
   elif [ -f "${version_file}" ]; then
-    log 'debug' "Version File is the default \${TGENV_ROOT}/version (${TGENV_ROOT}/version)";
+    log 'debug' "Version File is the default \${TGENV_CONFIG_DIR}/version (${TGENV_CONFIG_DIR}/version)";
     version_requested="$(cat "${version_file}")" \
       || log 'error' "Failed to open ${version_file}";
 
@@ -85,23 +91,39 @@ if [ -z "${arg}" ]; then
       version_requested='latest';
     fi;
 
-  else
-    log 'debug' "Version File is the default \${TGENV_ROOT}/version (${TGENV_ROOT}/version) but it doesn't exist";
-    log 'info' 'No version requested on the command line or in the version file search path. Installing "latest"';
+  else 
+    log 'debug' "Version File is the default \${TGENV_CONFIG_DIR}/version (${TGENV_CONFIG_DIR}/version) but it doesn't exist";
+    log 'debug' 'No version requested on the command line or in the version file search path. Installing "latest"';
     version_requested='latest';
   fi;
+elif [ -n "${TGENV_TERRAGRUNT_VERSION:-""}" ]; then
+  version_requested="${TGENV_TERRAGRUNT_VERSION}";
+  log 'debug' "TGENV_TERRAGRUNT_VERSION is set: ${TGENV_TERRAGRUNT_VERSION}";
 else
   version_requested="${arg}";
 fi;
 
-log 'debug' "Version Requested: ${version_requested}";
+[[ -n "${version_requested:-""}" ]] \
+  && log 'debug' "Version Requested: ${version_requested}" \
+  || log 'error' 'Version could not be resolved!';
+
+# Accept a v-prefixed version, but strip the v.
+if [[ "${version_requested}" =~ ^v.*$ ]]; then
+  log 'debug' "Version Requested is prefixed with a v. Stripping the v.";
+  version_requested="${version_requested#v*}";
+fi;
 
 if [[ "${version_requested}" =~ ^min-required$ ]]; then
-  log 'info' 'Detecting minimum required version...';
+  log 'debug' 'Detecting minimum required version...';
   min_required="$(tgenv-min-required)" \
     || log 'error' 'tgenv-min-required failed';
 
-  log 'info' "Minimum required version detected: ${min_required}";
+  if [ -z "${min_required}" ]; then
+    log 'debug' 'It was not possible to detect a minimum-required version. Do you have a required_version line present?';
+    exit;
+  fi;
+
+  log 'debug' "Minimum required version detected: ${min_required}";
   version_requested="${min_required}";
 fi;
 

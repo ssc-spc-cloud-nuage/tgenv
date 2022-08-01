@@ -50,26 +50,91 @@ fi;
 
 declare -a errors=();
 
-log 'info' '### Install not min-required version';
 cleanup || log 'error' 'Cleanup failed?!';
 
-v='0.8.8';
+
+log 'info' '### Install min-required normal version (#.#.#)';
+
 minv='0.8.0';
-(
-  tgenv install "${v}" || true;
-  tgenv use "${v}" || exit 1;
-  check_active_version "${v}" || exit 1;
-) || error_and_proceed "Installing specific version ${v}";
 
 echo "terragrunt {
+  required_version = \">=${minv}\"
+}" > min_required.tf;
 
+(
+  tgenv install min-required;
+  tgenv use min-required;
+  check_active_version "${minv}";
+) || error_and_proceed 'Min required version does not match';
+
+cleanup || log 'error' 'Cleanup failed?!';
+
+
+log 'info' '### Install min-required tagged version (#.#.#-tag#)'
+
+minv='0.13.0-rc1'
+
+echo "terragrunt {
+    required_version = \">=${minv}\"
+}" > min_required.tf;
+
+(
+  tgenv install min-required;
+  tgenv use min-required;
+  check_active_version "${minv}";
+) || error_and_proceed 'Min required tagged-version does not match';
+
+cleanup || log 'error' 'Cleanup failed?!';
+
+
+log 'info' '### Install min-required incomplete version (#.#.<missing>)'
+
+minv='0.12';
+
+echo "terragrunt {
   required_version = \">=${minv}\"
 }" >> min_required.tf;
 
-tgenv install min-required;
-tgenv use min-required;
+(
+  tgenv install min-required;
+  tgenv use min-required;
+  check_active_version "${minv}.0";
+) || error_and_proceed 'Min required incomplete-version does not match';
 
-check_active_version "${minv}" || error_and_proceed 'Min required version does not match';
+cleanup || log 'error' 'Cleanup failed?!';
+
+
+log 'info' '### Install min-required with TGENV_AUTO_INSTALL';
+
+minv='1.0.0';
+
+echo "terragrunt {
+  required_version = \">=${minv}\"
+}" >> min_required.tf;
+echo 'min-required' > .terragrunt-version;
+
+(
+  TGENV_AUTO_INSTALL=true terragrunt version;
+  check_active_version "${minv}";
+) || error_and_proceed 'Min required auto-installed version does not match';
+
+cleanup || log 'error' 'Cleanup failed?!';
+
+
+log 'info' '### Install min-required with TGENV_AUTO_INSTALL & -chdir';
+
+minv='1.1.0';
+
+mkdir -p chdir-dir
+echo "terragrunt {
+  required_version = \">=${minv}\"
+}" >> chdir-dir/min_required.tf;
+echo 'min-required' > chdir-dir/.terragrunt-version
+
+(
+  TGENV_AUTO_INSTALL=true terragrunt -chdir=chdir-dir version;
+  check_active_version "${minv}" chdir-dir;
+) || error_and_proceed 'Min required version from -chdir does not match';
 
 cleanup || log 'error' 'Cleanup failed?!';
 

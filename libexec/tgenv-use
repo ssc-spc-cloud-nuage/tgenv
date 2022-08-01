@@ -60,45 +60,95 @@ done;
 
 [ "${#}" -gt 1 ] && log 'error' 'usage: tgenv use [<version>]';
 
-[ -d "${TGENV_ROOT}/versions" ] \
-  || log 'error' 'No versions of terragrunt installed. Please install one with: tgenv install';
+declare auto_install="${TGENV_AUTO_INSTALL:-true}";
 
-declare requested="${1:-""}";
+if [ "${auto_install}" != 'true' ]; then
+  [ -d "${TGENV_CONFIG_DIR}/versions" ] \
+    || log 'error' 'No versions of terragrunt installed. Please install one with: tgenv install';
+fi;
 
-log debug "Resolving version with: tgenv-resolve-version ${requested}";
-declare resolved="$(tgenv-resolve-version ${requested})";
+declare requested_arg="${1:-""}";
+declare version_source_suffix="";
+declare requested="${requested_arg}";
+declare loaded_version_file="$(tgenv-version-file)";
+
+if [ -z "${requested_arg}" -a -z "${TGENV_TERRAGRUNT_VERSION:-""}" ]; then
+  version_source_suffix=" (set by ${loaded_version_file})";
+
+  if [ -f "${loaded_version_file}" ]; then
+    requested="$(cat "${loaded_version_file}" || true)";
+  else
+    # No-one asked for anything, no default version is set either
+    requested='latest';
+  fi;
+
+elif [ -z "${requested_arg}" ]; then
+  version_source_suffix=' (set by TGENV_TERRAGRUNT_VERSION)';
+  requested="${TGENV_TERRAGRUNT_VERSION}";
+fi;
+
+log debug "Resolving version with: tgenv-resolve-version ${requested_arg}";
+declare resolved="$(tgenv-resolve-version ${requested_arg})";
+[ -z "${resolved}" ] && log 'error' "Failure to resolve version from ${requested_arg}";
+
+log debug "Resolved to: ${resolved}";
 
 declare version="${resolved%%\:*}";
 declare regex="${resolved##*\:}";
+declare installed_version='';
 
-log 'debug' "Searching ${TGENV_ROOT}/versions for latest version matching ${regex}";
-declare version="$(\find "${TGENV_ROOT}/versions" -type d -exec basename {} \; \
-  | tail -n +2 \
-  | sort -t'.' -k 1nr,1 -k 2nr,2 -k 3nr,3 \
-  | grep -e "${regex}" \
-  | head -n 1
-)";
+log 'debug' "Searching ${TGENV_CONFIG_DIR}/versions/ for latest version matching ${regex}";
 
-[ -n "${version}" ] \
-  && log 'debug' "Found version: ${version}" \
-  || log 'error' "No installed versions of terragrunt matched '${1}'";
-
-target_path="${TGENV_ROOT}/versions/${version}";
-[ -f "${target_path}/terragrunt" ] \
-  || log 'error' "Version directory for ${version} is present, but the terragrunt binary is not! Manual intervention required.";
-[ -x "${target_path}/terragrunt" ] \
-  || log 'error' "Version directory for ${version} is present, but the terragrunt binary is not executable! Manual intervention required.";
-
-log 'info' "Switching default version to v${version}";
-version_file="${TGENV_ROOT}/version";
-log 'debug' "Writing \"${version}\" to \"${version_file}\"";
-echo "${version}" > "${version_file}" \
-  || log 'error' "Switch to v${version} failed";
-
-if [ "${version_file}" != "$(tgenv-version-file)" ]; then
-  log 'warn' "Default version file overridden by $(tgenv-version-file), changing the default version has no effect";
+if [ -d "${TGENV_CONFIG_DIR}/versions" ]; then
+  installed_version="$(\find "${TGENV_CONFIG_DIR}/versions/" -type d -exec basename {} \; \
+    | tail -n +2 \
+    | grep -e "${regex}" \
+    | sort -t'.' -k 1nr,1 -k 2nr,2 -k 3r,3 \
+    | head -n 1
+  )";
 fi;
 
-terragrunt --version 1>/dev/null \
-  || log 'error' "'terragrunt --version' failed. Something is seriously wrong";
-log 'info' "Switching completed";
+if [ -n "${installed_version}" ]; then
+  log 'debug' "Found version: ${installed_version}";
+else
+  if [ "${auto_install}" == 'true' ]; then
+    log 'info' "No installed versions of terragrunt matched '${resolved}'. Trying to install a matching version since TGENV_AUTO_INSTALL=true";
+
+    declare install_version='';
+    [ "${version}" == 'latest' ] && install_version="${version}:${regex}" || install_version="${version}";
+
+    tgenv-install "${install_version}" || log 'error' 'Installing a matching version failed';
+
+    installed_version="$(\find "${TGENV_CONFIG_DIR}/versions/" -type d -exec basename {} \; \
+      | tail -n +2 \
+      | sort -t'.' -k 1nr,1 -k 2nr,2 -k 3nr,3 \
+      | grep -e "${regex}" \
+      | head -n 1
+    )";
+
+    [ -n "${installed_version}" ] \
+      || log 'error' "Despite successfully installing a version matching '${resolved}', a matching version could not be found in '${TGENV_CONFIG_DIR}/versions/' - This should be pretty much impossible";
+  fi;
+fi;
+
+target_path="${TGENV_CONFIG_DIR}/versions/${installed_version}";
+log 'debug' "target_path is ${TGENV_CONFIG_DIR}/versions/${installed_version}";
+
+[ -d "${target_path}" ] \
+  || log 'error' "Version directory for ${installed_version} (${target_path}) is not present! Manual intervention required.";
+[ -f "${target_path}/terragrunt" ] \
+  || log 'error' "Version directory for ${installed_version} is present, but the terragrunt binary is not! Manual intervention required.";
+[ -x "${target_path}/terragrunt" ] \
+  || log 'error' "Version directory for ${installed_version} is present, but the terragrunt binary is not executable! Manual intervention required.";
+
+log 'info' "Switching default version to v${installed_version}";
+version_file="${TGENV_CONFIG_DIR}/version";
+log 'debug' "Writing \"${installed_version}\" to \"${version_file}\"";
+echo "${installed_version}" > "${version_file}" \
+  || log 'error' "Switch to v${installed_version} failed";
+
+if [ "${version_file}" != "${loaded_version_file}" ]; then
+  log 'warn' "Default version file overridden by ${loaded_version_file}, changing the default version has no effect";
+fi;
+
+log 'info' "Default version (when not overridden by .terragrunt-version or TGENV_TERRAGRUNT_VERSION) is now: ${installed_version}";

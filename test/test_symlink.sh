@@ -60,14 +60,14 @@ ln -s "${PWD}"/bin/* "${TGENV_BIN_DIR}";
 
 cleanup || log 'error' 'Cleanup failed?!';
 
-log 'info' '## Installing 0.26.7';
-${TGENV_BIN_DIR}/tgenv install 0.26.7 || error_and_proceed 'Install failed';
+log 'info' '## Installing 0.8.2';
+${TGENV_BIN_DIR}/tgenv install 0.8.2 || error_and_proceed 'Install failed';
 
-log 'info' '## Using 0.26.7';
-${TGENV_BIN_DIR}/tgenv use 0.26.7 || error_and_proceed 'Use failed';
+log 'info' '## Using 0.8.2';
+${TGENV_BIN_DIR}/tgenv use 0.8.2 || error_and_proceed 'Use failed';
 
-log 'info' '## Check-Version for 0.26.7';
-check_active_version 0.26.7 || error_and_proceed 'Version check failed';
+log 'info' '## Check-Version for 0.8.2';
+check_active_version 0.8.2 || error_and_proceed 'Version check failed';
 
 if [ "${#errors[@]}" -gt 0 ]; then
   log 'warn' '===== The following symlink tests failed =====';

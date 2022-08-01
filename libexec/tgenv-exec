@@ -72,32 +72,4 @@ done;
 # Begin Script Body #
 #####################
 
-log 'debug' 'Getting version from tgenv-version-name';
-TGENV_VERSION="$(tgenv-version-name)" \
-  && log 'debug' "TGENV_VERSION is ${TGENV_VERSION}" \
-  || {
-    # Errors will be logged from tgenv-version name,
-    # we don't need to trouble STDERR with repeat information here
-    log 'debug' 'Failed to get version from tgenv-version-name';
-    exit 1;
-  };
-export TGENV_VERSION;
-
-if [ ! -d "${TGENV_ROOT}/versions/${TGENV_VERSION}" ]; then
-  if [ "${TGENV_AUTO_INSTALL:-true}" == "true" ]; then
-    log 'info' "version '${TGENV_VERSION}' is not installed (set by $(tgenv-version-file)). Installing now as TGENV_AUTO_INSTALL==true";
-    tgenv-install;
-  else
-    log 'error' "version '${TGENV_VERSION}' was requested, but not installed and TGENV_AUTO_INSTALL is not 'true'";
-  fi;
-fi;
-
-TG_BIN_PATH="${TGENV_ROOT}/versions/${TGENV_VERSION}/terragrunt";
-export PATH="${TG_BIN_PATH}:${PATH}";
-log 'debug' "TG_BIN_PATH added to PATH: ${TG_BIN_PATH}";
-log 'debug' "Executing: ${TG_BIN_PATH} $@";
-
-exec "${TG_BIN_PATH}" "$@" \
-  || log 'error' "Failed to execute: ${TG_BIN_PATH} $*";
-
-exit 0;
+tgenv-exec "$@";

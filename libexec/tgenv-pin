@@ -18,7 +18,7 @@ if [ -z "${TGENV_ROOT:-""}" ]; then
     local file_name;
 
     while [ "${target_file}" != "" ]; do
-      cd "$(dirname "${target_file}")" || early_death "Failed to 'cd \$(dirname ${target_file})' while trying to determine TGENV_ROOT";
+      cd "$(dirname ${target_file})" || early_death "Failed to 'cd \$(dirname ${target_file})' while trying to determine TGENV_ROOT";
       file_name="$(basename "${target_file}")" || early_death "Failed to 'basename \"${target_file}\"' while trying to determine TGENV_ROOT";
       target_file="$(readlink "${file_name}")";
     done;
@@ -58,18 +58,20 @@ done;
 #####################
 # Begin Script Body #
 #####################
-if [ ${#} -ne 0 ];then
-  echo "usage: tgenv list-remote" 1>&2
-  exit 1
-fi
 
-link_release="https://api.github.com/repos/gruntwork-io/terragrunt/tags?per_page=1000"
-print=$(curl -sf $link_release)
+[ "${#}" -ne 0 ] \
+  && log 'error' "usage: tgenv pin";
 
-return_code=$?
-if [ $return_code -eq 22 ];then
-  log 'error' "Failed to get list verion on $link_release"
-  print=`cat ${TGENV_ROOT}/list_all_versions_offline`
-fi
+[ -d "${TGENV_CONFIG_DIR}/versions/" ] \
+  || log 'error' 'No versions available. Please install one with: tgenv install';
 
-echo $print | grep -o -E "[0-9]+\.[0-9]+\.[0-9]+(-(rc|beta)[0-9]+)?" | uniq
+[[ -x "${TGENV_CONFIG_DIR}/versions" && -r "${TGENV_CONFIG_DIR}/versions" ]] \
+  || log 'error' "tgenv versions directory is inaccessible: ${TGENV_CONFIG_DIR}/versions";
+
+version_name="$(tgenv-version-name 2>/dev/null || true)" \
+  && log 'debug' "tgenv-version-name reported: ${version_name}";
+
+echo "${version_name}" > .terragrunt-version;
+log 'info' "Pinned version by writing \"${version_name}\" to $(pwd)/.terragrunt-version";
+
+exit 0;

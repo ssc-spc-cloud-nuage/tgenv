@@ -56,53 +56,14 @@ for dir in libexec bin; do
   esac;
 done;
 
+# If on MacOS with Homebrew, use GNU grep
+# This allows keybase login detection to work on Mac,
+# and is required to be able to detect terragrunt version
+# from "required_version" setting in "*.tf" files
+check_dependencies;
+
 #####################
 # Begin Script Body #
 #####################
 
-[ -d "${TGENV_ROOT}/versions" ] \
-  || log 'error' 'No versions of terragrunt installed. Please install one with: tgenv install';
-
-TGENV_VERSION_FILE="$(tgenv-version-file)" \
-  && log 'debug' "TGENV_VERSION_FILE retrieved from tgenv-version-file: ${TGENV_VERSION_FILE}" \
-  || log 'error' 'Failed to retrieve TGENV_VERSION_FILE from tgenv-version-file';
-
-TGENV_VERSION="$(cat "${TGENV_VERSION_FILE}" || true)" \
-  && log 'debug' "TGENV_VERSION specified in TGENV_VERSION_FILE: ${TGENV_VERSION}";
-
-if [[ "${TGENV_VERSION}" =~ ^latest.*$ ]]; then
-  log 'debug' "TGENV_VERSION uses 'latest' keyword: ${TGENV_VERSION}";
-
-  if [[ "${TGENV_VERSION}" =~ ^latest\:.*$ ]]; then
-    regex="${TGENV_VERSION##*\:}";
-    log 'debug' "'latest' keyword uses regex: ${regex}";
-  else
-    regex='.*'; # Just saves a seperate command below without the grep
-    log 'debug' "'latest' keyword does not use regex";
-  fi;
-
-  version="$(\find "${TGENV_ROOT}/versions" -type d -exec basename {} \; \
-    | tail -n +2 \
-    | sort -t'.' -k 1nr,1 -k 2nr,2 -k 3nr,3 \
-    | grep -e "${regex}" \
-    | head -n 1)";
-
-  if [ -n "${version}" ]; then
-    log 'debug' "Version selected: ${version}";
-    TGENV_VERSION="${version}"
-  else
-    log 'error' "No installed versions of terragrunt matched '${TGENV_VERSION}'";
-  fi;
-
-else
-  log 'debug' 'TGENV_VERSION does not use "latest" keyword';
-fi;
-
-[ -z "${TGENV_VERSION}" ] \
-  && log 'error' "Version could not be resolved (set by ${TGENV_VERSION_FILE} or tgenv use <version>)";
-
-if [ ! -d "${TGENV_ROOT}/versions/${TGENV_VERSION}" ]; then
-  log 'debug' "version '${TGENV_VERSION}' is not installed (set by ${TGENV_VERSION_FILE})";
-fi;
-
-echo "${TGENV_VERSION}";
+tgenv-version-name "$@";

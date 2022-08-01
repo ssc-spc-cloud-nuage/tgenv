@@ -10,6 +10,9 @@ Commands:
    uninstall     Uninstall a specific version of Terragrunt
    list          List all installed versions
    list-remote   List all installable versions
+   version-name  Print current version
+   init          Update environment to use 'tgenv' correctly.
+   pin           Write the current active version to ./.terragrunt-version
 ';
 
 exit 0;

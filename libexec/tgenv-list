@@ -60,34 +60,41 @@ done;
 #####################
 
 [ "${#}" -ne 0 ] \
-  && log 'error' "usage: tgenv list"
+  && log 'error' "usage: tgenv list";
 
-[ -d "${TGENV_ROOT}/versions" ] \
-  || log 'error' 'No versions available. Please install one with: tgenv install'
+[ -d "${TGENV_CONFIG_DIR}/versions" ] \
+  || log 'error' 'No versions available. Please install one with: tgenv install';
 
-[[ -x "${TGENV_ROOT}/versions" && -r "${TGENV_ROOT}/versions" ]] \
-  || log 'error' "tgenv versions directory is inaccessible: ${TGENV_ROOT}/versions";
+[[ -x "${TGENV_CONFIG_DIR}/versions" && -r "${TGENV_CONFIG_DIR}/versions" ]] \
+  || log 'error' "tgenv versions directory is inaccessible: ${TGENV_CONFIG_DIR}/versions";
 
-version_name="$(tgenv-version-name)" \
-  && log 'debug' "tgenv-version-name reported: ${version_name}" \
-  || log 'error' "tgenv-version-name failed";
+version_name="$(tgenv-version-name 2>/dev/null || true)" \
+  && log 'debug' "tgenv-version-name reported: ${version_name}";
 export version_name;
 
-version_file="$(tgenv-version-file)" \
-  && log 'debug' "tgenv-version-file reported: ${version_file}" \
-  || log 'error' "tgenv-version-file failed";
-export version_file;
+if [ -z "${TGENV_TERRAGRUNT_VERSION:-""}" ]; then
+  version_source="$(tgenv-version-file)" \
+    && log 'debug' "tgenv-version-file reported: ${version_source}" \
+    || log 'error' "tgenv-version-file failed";
+else
+  version_source='TGENV_TERRAGRUNT_VERSION';
+fi;
+export version_source;
+
+# Register for whether a default terragrunt version has yet been set
+declare -i default_set=0;
 
 print_version () {
   if [ "${1}" == "${version_name}" ]; then
-    echo "* ${1} (set by ${version_file})";
+    echo "* ${1} (set by ${version_source})";
+    default_set=1;
   else
     echo "  ${1}";
   fi;
 };
 
 log 'debug' 'Listing versions...';
-local_versions=($(\find "${TGENV_ROOT}/versions" -type d -exec basename {} \; \
+local_versions=($(\find "${TGENV_CONFIG_DIR}/versions/" -type d -exec basename {} \; \
   | tail -n +2 \
   | sort -t'.' -k 1nr,1 -k 2nr,2 -k 3nr,3));
 
@@ -97,3 +104,7 @@ log 'debug' 'Printing versions...';
 for local_version in ${local_versions[@]}; do
   print_version "${local_version}";
 done;
+
+[ "${default_set}" -eq 0 ] && log 'info' "No default set. Set with 'tgenv use <version>'";
+
+exit 0;

@@ -53,29 +53,35 @@ declare -a errors=();
 log 'info' '### List local versions';
 cleanup || log 'error' "Cleanup failed?!";
 
-for v in 0.20.4 0.20.5 0.24.4 0.25.2 0.25.5; do
+for v in 0.7.2 0.7.13 0.9.1 0.9.2 v0.9.11 0.14.6; do
   log 'info' "## Installing version ${v} to construct list";
   tgenv install "${v}" \
     && log 'debug' "Install of version ${v} succeeded" \
     || error_and_proceed "Install of version ${v} failed";
 done;
 
-tgenv use 0.25.5
+log 'info' '## Ensuring tgenv list success with no default set';
+tgenv list \
+  && log 'debug' "List succeeded with no default set" \
+  || error_and_proceed "List failed with no default set";
 
-log 'info' '## Comparing "tgenv list" to expectations';
+tgenv use 0.14.6;
+
+log 'info' '## Comparing "tgenv list" with default set';
 result="$(tgenv list)";
 expected="$(cat << EOS
-* 0.25.5 (set by $(tgenv version-file))
-  0.25.2
-  0.24.4
-  0.20.5
-  0.20.4
+* 0.14.6 (set by $(tgenv version-file))
+  0.9.11
+  0.9.2
+  0.9.1
+  0.7.13
+  0.7.2
 EOS
 )";
 
-if [ "${expected}" != "${result}" ]; then
-  error_and_proceed "List mismatch.\nExpected:\n${expected}\nGot:\n${result}";
-fi;
+[ "${expected}" == "${result}" ] \
+  && log 'info' 'List matches expectation.' \
+  || error_and_proceed "List mismatch.\nExpected:\n${expected}\nGot:\n${result}";
 
 if [ "${#errors[@]}" -gt 0 ]; then
   log 'warn' "===== The following list tests failed =====";

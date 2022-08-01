@@ -1,7 +1,7 @@
 versions/
 version
-.terragrunt-version
-bin/terragrunt-*
+.-version
+bin/-*
 /use-gnupg
 /use-gpgv
 .*.swp

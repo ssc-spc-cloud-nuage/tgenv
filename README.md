@@ -1,28 +1,16 @@
-> Ported form [tfutils/tfenv](https://github.com/tfutils/tfenv/tree/0494129a4ad5dfde0cdd9a68ce54b6c7a53afc3f), modified to work with terragrunt.
+![CI](https://github.com/tfutils/tgenv/workflows/CI/badge.svg)
 
 # tgenv
 
-Terragrunt version manager inspired by [rbenv](https://github.com/rbenv/rbenv)
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Support](#support)
-- [Installation](#installation)
-- [Usage](#usage)
-- [.terragrunt-version file](#terragrunt-version-file)
-- [Upgrading](#upgrading)
-- [Uninstalling](#uninstalling)
-- [LICENSES](#licenses)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+[Terragrunt](https://terragrunt.gruntwork.io/) version manager inspired by [tfenv](https://github.com/tfutils/tfenv)
 
 ## Support
 
 Currently tgenv supports the following OSes
 
-- Mac OS X (64bit)
+- macOS
+  - 64bit
+  - Arm (Apple Silicon)
 - Linux
   - 64bit
   - Arm
@@ -30,36 +18,40 @@ Currently tgenv supports the following OSes
 
 ## Installation
 
+### Manual
+
 1. Check out tgenv into any path (here is `${HOME}/.tgenv`)
 
-  ```console
-  $ git clone https://github.com/taosmountain/tgenv.git ~/.tgenv
-  $
-  $ # Or clone a specific version
-  $ git clone 0.1.0 https://github.com/taosmountain/tgenv.git ~/.tgenv
-  ```
+```console
+$ git clone --depth=1 https://github.com/ssc-spc-cloud-nuage/tgenv.git ~/.tgenv
+```
 
 2. Add `~/.tgenv/bin` to your `$PATH` any way you like
 
-  ```console
-  $ echo 'export PATH="$HOME/.tgenv/bin:$PATH"' >> ~/.bash_profile
-  ```
+```console
+$ echo 'export PATH="$HOME/.tgenv/bin:$PATH"' >> ~/.bash_profile
+```
+
+  For WSL users
+```bash
+$ echo 'export PATH=$PATH:$HOME/.tgenv/bin' >> ~/.bashrc
+```
 
   OR you can make symlinks for `tgenv/bin/*` scripts into a path that is already added to your `$PATH` (e.g. `/usr/local/bin`) `OSX/Linux Only!`
 
-  ```console
-  $ ln -s ~/.tgenv/bin/* /usr/local/bin
-  ```
+```console
+$ ln -s ~/.tgenv/bin/* /usr/local/bin
+```
 
   On Ubuntu/Debian touching `/usr/local/bin` might require sudo access, but you can create `${HOME}/bin` or `${HOME}/.local/bin` and on next login it will get added to the session `$PATH`
   or by running `. ${HOME}/.profile` it will get added to the current shell session's `$PATH`.
 
-  ```console
-  $ mkdir -p ~/.local/bin/
-  $ . ~/.profile
-  $ ln -s ~/.tgenv/bin/* ~/.local/bin
-  $ which tgenv
-  ```
+```console
+$ mkdir -p ~/.local/bin/
+$ . ~/.profile
+$ ln -s ~/.tgenv/bin/* ~/.local/bin
+$ which tgenv
+```
 
 ## Usage
 
@@ -67,25 +59,44 @@ Currently tgenv supports the following OSes
 
 Install a specific version of Terragrunt.
 
-If no parameter is passed, the version to use is resolved automatically via .terragrunt-version files, defaulting to 'latest' if none are found.
+If no parameter is passed, the version to use is resolved automatically via [TGENV\_TERRAGRUNT\_VERSION environment variable](#tgenv_terragrunt_version) or [.terragrunt-version files](#terragrunt-version-file), in that order of precedence, i.e. TGENV\_TERRAGRUNT\_VERSION, then .terragrunt-version. The default is 'latest' if none are found.
 
 If a parameter is passed, available options:
 
-- `i.j.k` exact version to install
+- `x.y.z` [Semver 2.0.0](https://semver.org/) string specifying the exact version to install
 - `latest` is a syntax to install latest version
 - `latest:<regex>` is a syntax to install latest version matching regex (used by grep -e)
 - `min-required` is a syntax to recursively scan your Terragrunt files to detect which version is minimally required. See [required_version](https://www.terragrunt.io/docs/configuration/terragrunt.html) docs. Also [see min-required](#min-required) section below.
 
 ```console
 $ tgenv install
-$ tgenv install 0.24.0
+$ tgenv install 0.7.0
 $ tgenv install latest
-$ tgenv install latest:^0.25
+$ tgenv install latest:^0.8
+$ tgenv install min-required
 ```
 
 #### .terragrunt-version
 
-If you use a [.terragrunt-version file](#terragrunt-version-file), `tgenv install` (no argument) will install the version written in it.
+If you use a [.terragrunt-version](#terragrunt-version-file) file, `tgenv install` (no argument) will install the version written in it.
+
+#### min-required
+
+Please note that we don't do semantic version range parsing but use first ever found version as the candidate for minimally required one. It is up to the user to keep the definition reasonable. I.e.
+
+```terragrunt
+// this will detect 0.12.3
+terragrunt {
+  required_version  = "<0.12.3, >= 0.10.0"
+}
+```
+
+```terragrunt
+// this will detect 0.10.0
+terragrunt {
+  required_version  = ">= 0.10.0, <0.12.3"
+}
+```
 
 ### Environment Variables
 
@@ -98,7 +109,7 @@ String (Default: amd64)
 Specify architecture. Architecture other than the default amd64 can be specified with the `TGENV_ARCH` environment variable
 
 ```console
-TGENV_ARCH=arm tgenv install 0.25.5
+$ TGENV_ARCH=arm64 tgenv install 0.7.9
 ```
 
 ##### `TGENV_AUTO_INSTALL`
@@ -108,7 +119,11 @@ String (Default: true)
 Should tgenv automatically install terragrunt if the version specified by defaults or a .terragrunt-version file is not currently installed.
 
 ```console
-TGENV_AUTO_INSTALL=false terragrunt plan
+$ TGENV_AUTO_INSTALL=false terragrunt plan
+```
+
+```console
+$ terragrunt use <version that is not yet installed>
 ```
 
 ##### `TGENV_CURL_OUTPUT`
@@ -134,15 +149,64 @@ Set the debug level for TGENV.
 
 ##### `TGENV_REMOTE`
 
-String (Default: https://github.com/gruntwork-io)
+String (Default: https://releases.hashicorp.com)
 
 To install from a remote other than the default
 
 ```console
-TGENV_REMOTE=https://example.jfrog.io/artifactory/hashicorp
+$ TGENV_REMOTE=https://example.jfrog.io/artifactory/hashicorp
 ```
 
-> NOTE: This is currently setup to use github. Changing remote may cause issues.
+##### `TGENV_REVERSE_REMOTE`
+
+Integer (Default: 0)
+
+When using a custom remote, such as Artifactory, instead of the Hashicorp servers,
+the list of terragrunt versions returned by the curl of the remote directory may be inverted.
+In this case the `latest` functionality will not work as expected because it expects the
+versions to be listed in order of release date from newest to oldest. If your remote
+is instead providing a list that is oldes-first, set `TGENV_REVERSE_REMOTE=1` and
+functionality will be restored.
+
+```console
+$ TGENV_REVERSE_REMOTE=1 tgenv list-remote
+```
+
+##### `TGENV_CONFIG_DIR`
+
+Path (Default: `$TGENV_ROOT`)
+
+The path to a directory where the local terragrunt versions and configuration files exist.
+
+```console
+TGENV_CONFIG_DIR="$XDG_CONFIG_HOME/tgenv"
+```
+
+##### `TGENV_TERRAGRUNT_VERSION`
+
+String (Default: "")
+
+If not empty string, this variable overrides Terragrunt version, specified in [.terragrunt-version files](#terragrunt-version-file).
+`latest` and `latest:<regex>` syntax are also supported.
+[`tgenv install`](#tgenv-install-version) and [`tgenv use`](#tgenv-use-version) command also respects this variable.
+
+e.g.
+
+```console
+$ TGENV_TERRAGRUNT_VERSION=latest:^0.11. terragrunt --version
+```
+
+##### `TGENV_NETRC_PATH`
+
+String (Default: "")
+
+If not empty string, this variable specifies the credentials file used to access the remote location (useful if used in conjunction with TGENV_REMOTE).
+
+e.g.
+
+```console
+$ TGENV_NETRC_PATH="$PWD/.netrc.tgenv"
+```
 
 #### Bashlog Logging Library
 
@@ -182,7 +246,7 @@ Each executable logs to its own file.
 e.g.
 
 ```console
-BASHLOG_FILE=1 tgenv use latest
+$ BASHLOG_FILE=1 tgenv use latest
 ```
 
 will log to `/tmp/tgenv-use.log`
@@ -204,7 +268,7 @@ This variable allows you to pass a string containing a command that will be exec
 e.g.
 
 ```console
-BASHLOG_I_PROMISE_TO_BE_CAREFUL_CUSTOM_EVAL_PREFIX='echo "${$$} "'
+$ BASHLOG_I_PROMISE_TO_BE_CAREFUL_CUSTOM_EVAL_PREFIX='echo "${$$} "'
 ```
 will prefix every log line with the calling process' PID.
 
@@ -220,7 +284,7 @@ Each executable logs to its own file.
 e.g.
 
 ```console
-BASHLOG_JSON=1 tgenv use latest
+$ BASHLOG_JSON=1 tgenv use latest
 ```
 
 will log in JSON format to `/tmp/tgenv-use.log.json`
@@ -244,11 +308,10 @@ To log to syslog using the `logger` binary, set this to 1.
 The basic functionality is thus:
 
 ```console
-local tag="${BASHLOG_SYSLOG_TAG:-$(basename "${0}")}";
-local facility="${BASHLOG_SYSLOG_FACILITY:-local0}";
-local pid="${$}";
-
-logger --id="${pid}" -t "${tag}" -p "${facility}.${severity}" "${syslog_line}"
+$ local tag="${BASHLOG_SYSLOG_TAG:-$(basename "${0}")}";
+$ local facility="${BASHLOG_SYSLOG_FACILITY:-local0}";
+$ local pid="${$}";
+$ logger --id="${pid}" -t "${tag}" -p "${facility}.${severity}" "${syslog_line}"
 ```
 
 ##### `BASHLOG_SYSLOG_FACILITY`
@@ -266,11 +329,12 @@ The syslog tag to specify when using SYSLOG type logging.
 Defaults to the PID of the calling process.
 
 
+
 ### tgenv use [version]
 
 Switch a version to use
 
-If no parameter is passed, the version to use is resolved automatically via .terragrunt-version files, defaulting to 'latest' if none are found.
+If no parameter is passed, the version to use is resolved automatically via [.terragrunt-version files](#terragrunt-version-file) or [TGENV\_TERRAGRUNT\_VERSION environment variable](#tgenv_terragrunt_version) (TGENV\_TERRAGRUNT\_VERSION takes precedence), defaulting to 'latest' if none are found.
 
 `latest` is a syntax to use the latest installed version
 
@@ -280,10 +344,13 @@ If no parameter is passed, the version to use is resolved automatically via .ter
 
 ```console
 $ tgenv use
-$ tgenv use 0.24.0
+$ tgenv use min-required
+$ tgenv use 0.7.0
 $ tgenv use latest
-$ tgenv use latest:^0.25
+$ tgenv use latest:^0.8
 ```
+
+Note: `tgenv use latest` or `tgenv use latest:<regex>` will find the latest matching version that is already installed. If no matching versions are installed, and TGENV_AUTO_INSTALL is set to `true` (which is the default) the the latest matching version in the remote repository will be installed and used.
 
 ### tgenv uninstall &lt;version>
 
@@ -292,9 +359,9 @@ Uninstall a specific version of Terragrunt
 `latest:<regex>` is a syntax to uninstall latest version matching regex (used by grep -e)
 
 ```console
-$ tgenv uninstall 0.24.0
+$ tgenv uninstall 0.7.0
 $ tgenv uninstall latest
-$ tgenv uninstall latest:^0.25
+$ tgenv uninstall latest:^0.8
 ```
 
 ### tgenv list
@@ -302,13 +369,16 @@ $ tgenv uninstall latest:^0.25
 List installed versions
 
 ```console
-% tgenv list
-* 0.26.7 (set by /opt/tgenv/version)
-  0.26.7
-  0.24.0
-  0.23.40
-  0.22.5
-  0.22.4
+$ tgenv list
+* 0.10.7 (set by /opt/tgenv/version)
+  0.9.0-beta2
+  0.8.8
+  0.8.4
+  0.7.0
+  0.7.0-rc4
+  0.6.16
+  0.6.2
+  0.6.1
 ```
 
 ### tgenv list-remote
@@ -316,23 +386,25 @@ List installed versions
 List installable versions
 
 ```console
-% tgenv list-remote
-0.26.3
-0.26.2
-0.26.0
-0.25.5
-0.25.4
-0.25.3
-0.25.2
-0.25.1
-0.25.0
-0.24.4
-0.24.3
-0.24.2
-0.24.1
-0.24.0
-0.23.40
-0.23.39
+$ tgenv list-remote
+0.9.0-beta2
+0.9.0-beta1
+0.8.8
+0.8.7
+0.8.6
+0.8.5
+0.8.4
+0.8.3
+0.8.2
+0.8.1
+0.8.0
+0.8.0-rc3
+0.8.0-rc2
+0.8.0-rc1
+0.8.0-beta2
+0.8.0-beta1
+0.7.13
+0.7.12
 ...
 ```
 
@@ -340,25 +412,30 @@ List installable versions
 
 If you put a `.terragrunt-version` file on your project root, or in your home directory, tgenv detects it and uses the version written in it. If the version is `latest` or `latest:<regex>`, the latest matching version currently installed will be selected.
 
+Note, that [TGENV\_TERRAGRUNT\_VERSION environment variable](#tgenv_terragrunt_version) can be used to override version, specified by `.terragrunt-version` file.
+
 ```console
 $ cat .terragrunt-version
-0.26.6
+0.6.16
 
-$ terragrunt --version
-terragrunt version v0.26.6
+$ terragrunt version
+Terragrunt v0.6.16
 
 Your version of Terragrunt is out of date! The latest version
-is 0.26.7. You can update by downloading from www.terragrunt.io
+is 0.7.3. You can update by downloading from www.terragrunt.io
 
-$ echo 0.26.7 > .terragrunt-version
+$ echo 0.7.3 > .terragrunt-version
 
-$ terragrunt --version
-terragrunt version v0.26.7
+$ terragrunt version
+Terragrunt v0.7.3
 
-$ echo latest:^0.25 > .terragrunt-version
+$ echo latest:^0.8 > .terragrunt-version
 
-$ terragrunt --version
-terragrunt version v0.25.5
+$ terragrunt version
+Terragrunt v0.8.8
+
+$ TGENV_TERRAGRUNT_VERSION=0.7.3 terragrunt --version
+Terragrunt v0.7.3
 ```
 
 ## Upgrading
@@ -373,13 +450,8 @@ $ git --git-dir=~/.tgenv/.git pull
 $ rm -rf /some/path/to/tgenv
 ```
 
-## LICENSES
+## LICENSE
 
-- [tfenv]
-  - tgenv uses a majority of tgenv's source code.
-- [rbenv]
-  - tgenv partially uses rbenv's source code
-
-
-[tfenv]: https://github.com/tfutils/tfenv/blob/master/LICENSE
-[rbenv]: https://github.com/rbenv/rbenv/blob/master/LICENSE
+- [tgenv itself](https://github.com/ssc-spc-cloud-nuage/tgenv/blob/main/LICENSE)
+- [tfenv](https://github.com/tfutils/tfenv/blob/master/LICENSE)
+- tgenv uses most of [tfenv](https://github.com/tfutils/tfenv)'s source code. Great work tfenv team!

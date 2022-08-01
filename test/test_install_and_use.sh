@@ -58,6 +58,17 @@ test_install_and_use() {
   return 0;
 };
 
+test_install_and_use_with_env() {
+  # Takes a static version and the optional keyword to install it with
+  local k="${2-""}";
+  local v="${1}";
+  TGENV_TERRAGRUNT_VERSION="${k}" tgenv install || return 1;
+  check_installed_version "${v}" || return 1;
+  TGENV_TERRAGRUNT_VERSION="${k}" tgenv use || return 1;
+  TGENV_TERRAGRUNT_VERSION="${k}" check_active_version "${v}" || return 1;
+  return 0;
+};
+
 test_install_and_use_overridden() {
   # Takes a static version and the optional keyword to install it with
   local k="${2-""}";
@@ -76,25 +87,38 @@ log 'info' '### Test Suite: Install and Use';
 tests__desc=(
   'latest version'
   'latest possibly-unstable version'
+  'latest alpha'
+  'latest beta'
+  'latest rc'
+  'latest possibly-unstable version from 0.11'
+  '0.11.15-oci'
   'latest version matching regex'
   'specific version'
+  'specific version with v prefix'
 );
 
 tests__kv=(
   "$(tgenv list-remote | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+$" | head -n 1),latest"
   "$(tgenv list-remote | head -n 1),latest:"
-  '0.19.31,latest:^0.19'
-  "0.20.5,0.20.5"
+  "$(tgenv list-remote | grep 'alpha' | head -n 1),latest:alpha"
+  "$(tgenv list-remote | grep 'beta' | head -n 1),latest:beta"
+  "$(tgenv list-remote | grep 'rc' | head -n 1),latest:rc"
+  "$(tgenv list-remote | grep '^0\.11\.' | head -n 1),latest:^0.11."
+  '0.11.15-oci,0.11.15-oci'
+  '0.8.8,latest:^0.8'
+  '0.7.13,0.7.13'
+  '0.14.6,v0.14.6'
 );
 
 tests_count=${#tests__desc[@]};
 
-declare desc kv k v;
+declare desc kv k v test_num;
 
-for ((test_num=0; test_num<${tests_count}; ++test_num )) ; do
+for ((test_iter=0; test_iter<${tests_count}; ++test_iter )) ; do
   cleanup || log 'error' 'Cleanup failed?!';
-  desc=${tests__desc[${test_num}]};
-  kv="${tests__kv[${test_num}]}";
+  test_num=$((test_iter + 1)); 
+  desc=${tests__desc[${test_iter}]};
+  kv="${tests__kv[${test_iter}]}";
   v="${kv%,*}";
   k="${kv##*,}";
   log 'info' "## Param Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} )";
@@ -103,10 +127,11 @@ for ((test_num=0; test_num<${tests_count}; ++test_num )) ; do
     || error_and_proceed "## Param Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} ) failed";
 done;
 
-for ((test_num=0; test_num<${tests_count}; ++test_num )) ; do
+for ((test_iter=0; test_iter<${tests_count}; ++test_iter )) ; do
   cleanup || log 'error' 'Cleanup failed?!';
-  desc=${tests__desc[${test_num}]};
-  kv="${tests__kv[${test_num}]}";
+  test_num=$((test_iter + 1)); 
+  desc=${tests__desc[${test_iter}]};
+  kv="${tests__kv[${test_iter}]}";
   v="${kv%,*}";
   k="${kv##*,}";
   log 'info' "## ./.terragrunt-version Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} )";
@@ -115,6 +140,21 @@ for ((test_num=0; test_num<${tests_count}; ++test_num )) ; do
   test_install_and_use "${v}" \
     && log info "## ./.terragrunt-version Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} ) succeeded" \
     || error_and_proceed "## ./.terragrunt-version Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} ) failed";
+done;
+
+for ((test_iter=0; test_iter<${tests_count}; ++test_iter )) ; do
+  cleanup || log 'error' 'Cleanup failed?!';
+  test_num=$((test_iter + 1)); 
+  desc=${tests__desc[${test_iter}]};
+  kv="${tests__kv[${test_iter}]}";
+  v="${kv%,*}";
+  k="${kv##*,}";
+  log 'info' "## TGENV_TERRAGRUNT_VERSION Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} )";
+  log 'info' "Writing 0.0.0 to ./.terragrunt-version";
+  echo "0.0.0" > ./.terragrunt-version;
+  test_install_and_use_with_env "${v}" "${k}" \
+    && log info "## TGENV_TERRAGRUNT_VERSION Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} ) succeeded" \
+    || error_and_proceed "## TGENV_TERRAGRUNT_VERSION Test ${test_num}/${tests_count}: ${desc} ( ${k} / ${v} ) failed";
 done;
 
 cleanup || log 'error' 'Cleanup failed?!';
@@ -156,6 +196,25 @@ if [ -f "${HOME}/.terragrunt-version.bup" ]; then
   mv "${HOME}/.terragrunt-version.bup" "${HOME}/.terragrunt-version";
 fi;
 
+log 'info' '## Use Auto-Install Test 1/2: (No Input)';
+cleanup || log 'error' 'Cleanup failed?!';
+
+(
+  tgenv use || exit 1;
+  check_default_version "$(tgenv list-remote | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+$" | head -n 1)" || exit 1;
+) && log info '## Use Auto-Install Test 1/2: (No Input) succeeded' \
+  || error_and_proceed '## Use Auto-Install Test 1/2: (No Input) failed';
+
+log 'info' '## Use Auto-Install Test 2/2: (Specific version)';
+cleanup || log 'error' 'Cleanup failed?!';
+
+(
+  tgenv use 1.0.1 || exit 1;
+  check_default_version 1.0.1 || exit 1;
+) && log info '## Use Auto-Install Test 2/2: (Specific version) succeeded' \
+  || error_and_proceed '## Use Auto-Install Test 2/2: (Specific version) failed';
+
+
 log 'info' 'Install invalid specific version';
 cleanup || log 'error' 'Cleanup failed?!';
 
@@ -166,15 +225,16 @@ neg_tests__desc=(
 
 neg_tests__kv=(
   '9.9.9'
-  "latest:word"
+  'latest:word'
 );
 
 neg_tests_count=${#neg_tests__desc[@]};
 
-for ((test_num=0; test_num<${neg_tests_count}; ++test_num )) ; do
+for ((test_iter=0; test_iter<${neg_tests_count}; ++test_iter )) ; do
   cleanup || log 'error' 'Cleanup failed?!';
-  desc=${neg_tests__desc[${test_num}]}
-  k="${neg_tests__kv[${test_num}]}";
+  test_num=$((test_iter + 1));
+  desc=${neg_tests__desc[${test_iter}]}
+  k="${neg_tests__kv[${test_iter}]}";
   expected_error_message="No versions matching '${k}' found in remote";
   log 'info' "##  Invalid Version Test ${test_num}/${neg_tests_count}: ${desc} ( ${k} )";
   [ -z "$(tgenv install "${k}" 2>&1 | grep "${expected_error_message}")" ] \

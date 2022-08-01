@@ -63,15 +63,19 @@ log 'info' '### Test Suite: Uninstall Local Versions';
 cleanup || log 'error' 'Cleanup failed?!';
 
 tests__keywords=(
-  '0.25.5'
+  '0.9.1'
+  '0.11.15-oci'
   'latest'
-  'latest:^0.23'
+  'latest:^0.8'
+  'v0.14.6'
 );
 
 tests__versions=(
-  '0.25.5'
+  '0.9.1'
+  '0.11.15-oci'
   "$(tgenv list-remote | head -n1)"
-  "$(tgenv list-remote | grep -e "^0.23" | head -n1)"
+  "$(tgenv list-remote | grep -e "^0.8" | head -n1)"
+  '0.14.6'
 );
 
 tests_count=${#tests__keywords[@]};
@@ -88,12 +92,12 @@ done;
 echo "### Uninstall removes versions directory"
 cleanup || error_and_die "Cleanup failed?!"
 (
-  tgenv install 0.24.3 || exit 1
-  tgenv install 0.24.4 || exit 1
+  tgenv install 0.12.1 || exit 1
+  tgenv install 0.12.2 || exit 1
   [ -d "./versions" ] || exit 1
-  tgenv uninstall 0.24.3 || exit 1
+  tgenv uninstall 0.12.1 || exit 1
   [ -d "./versions" ] || exit 1
-  tgenv uninstall 0.24.4 || exit 1
+  tgenv uninstall 0.12.2 || exit 1
   [ -d "./versions" ] && exit 1 || exit 0
 ) || error_and_proceed "Removing last version deletes versions directory"
 
