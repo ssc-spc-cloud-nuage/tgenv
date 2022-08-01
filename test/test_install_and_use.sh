@@ -52,8 +52,11 @@ test_install_and_use() {
   local k="${2-""}";
   local v="${1}";
   tgenv install "${k}" || return 1;
+  echo "check_installed_version";
   check_installed_version "${v}" || return 1;
+  echo "tgenv use ${k}";
   tgenv use "${k}" || return 1;
+  echo "check_installed_version";
   check_active_version "${v}" || return 1;
   return 0;
 };
@@ -86,13 +89,11 @@ log 'info' '### Test Suite: Install and Use';
 
 tests__desc=(
   'latest version'
-  'latest version matching regex'
   'specific version'
 );
 
 tests__kv=(
   "$(tgenv list-remote | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+$" | head -n 1),latest"
-  '0.36.8,latest:^0.36'
   '0.35.3,0.35.3'
 );
 
@@ -195,8 +196,8 @@ log 'info' '## Use Auto-Install Test 2/2: (Specific version)';
 cleanup || log 'error' 'Cleanup failed?!';
 
 (
-  tgenv use 1.0.1 || exit 1;
-  check_default_version 1.0.1 || exit 1;
+  tgenv use 0.29.4 || exit 1;
+  check_default_version 0.29.4 || exit 1;
 ) && log info '## Use Auto-Install Test 2/2: (Specific version) succeeded' \
   || error_and_proceed '## Use Auto-Install Test 2/2: (Specific version) failed';
 

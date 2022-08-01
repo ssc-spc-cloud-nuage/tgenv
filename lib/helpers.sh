@@ -89,9 +89,9 @@ function check_active_version() {
       maybe_chdir="-chdir=${2}";
   fi;
 
-  local active_version="$(${TGENV_ROOT}/bin/terragrunt ${maybe_chdir} version | grep '^Terragrunt')";
+  local active_version="$(${TGENV_ROOT}/bin/terragrunt ${maybe_chdir} )";
 
-  if ! grep -E "^Terragrunt v${v}((-dev)|( \([a-f0-9]+\)))?\$" <(echo "${active_version}"); then
+  if ! grep "v${v}" <(echo "${active_version}"); then
     log 'debug' "Expected version ${v} but found ${active_version}";
     return 1;
   fi;
@@ -103,8 +103,9 @@ export -f check_active_version;
 
 function check_installed_version() {
   local v="${1}";
-  local bin="${TGENV_CONFIG_DIR}/versions/${v}/terragrunt";
-  [ -n "$(${bin} version | grep -E "^Terragrunt v${v}((-dev)|( \([a-f0-9]+\)))?$")" ];
+  local bin="${TGENV_CONFIG_DIR}/versions/${v}/terragrunt ";
+  echo $bin
+  [ -n "$(${bin} | grep v${v})" ];
 };
 export -f check_installed_version;
 
