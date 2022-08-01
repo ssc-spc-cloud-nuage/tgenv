@@ -5,3 +5,4 @@ bin/-*
 /use-gnupg
 /use-gpgv
 .*.swp
+list_all_versions_offline
