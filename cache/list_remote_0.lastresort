@@ -1,0 +1,1002 @@
+[
+  {
+    "name": "v0.38.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.6",
+    "commit": {
+      "sha": "e6f53ed2d428944a30e03f32461d51393c68dd0f",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e6f53ed2d428944a30e03f32461d51393c68dd0f"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjY="
+  },
+  {
+    "name": "v0.38.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.5",
+    "commit": {
+      "sha": "7b7e213d90be6460cb37f8b57c0f8c48401f431d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/7b7e213d90be6460cb37f8b57c0f8c48401f431d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjU="
+  },
+  {
+    "name": "v0.38.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.4",
+    "commit": {
+      "sha": "48ff9d35066df8a7a49e6b854af95921618758ec",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/48ff9d35066df8a7a49e6b854af95921618758ec"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjQ="
+  },
+  {
+    "name": "v0.38.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.3",
+    "commit": {
+      "sha": "7d143740c05ef9a5cc87414c5b22107bf3cb1425",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/7d143740c05ef9a5cc87414c5b22107bf3cb1425"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjM="
+  },
+  {
+    "name": "v0.38.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.2",
+    "commit": {
+      "sha": "1cb5c30f36ac698e2f989aa552dd105ad0285059",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/1cb5c30f36ac698e2f989aa552dd105ad0285059"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjI="
+  },
+  {
+    "name": "v0.38.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.1",
+    "commit": {
+      "sha": "47f16b7b07359fa0f5d3e511954414932ec646dc",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/47f16b7b07359fa0f5d3e511954414932ec646dc"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjE="
+  },
+  {
+    "name": "v0.38.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.38.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.38.0",
+    "commit": {
+      "sha": "514e350460d08cf08bcebe9f3d4c466235096bc5",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/514e350460d08cf08bcebe9f3d4c466235096bc5"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM4LjA="
+  },
+  {
+    "name": "v0.37.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.37.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.37.4",
+    "commit": {
+      "sha": "a90616df43af5670a9fbb2a62dee1879dc0acf6a",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a90616df43af5670a9fbb2a62dee1879dc0acf6a"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM3LjQ="
+  },
+  {
+    "name": "v0.37.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.37.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.37.3",
+    "commit": {
+      "sha": "24435ecff44833ffe16555ec13b2e0a21ae081e2",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/24435ecff44833ffe16555ec13b2e0a21ae081e2"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM3LjM="
+  },
+  {
+    "name": "v0.37.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.37.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.37.2",
+    "commit": {
+      "sha": "9bde71bd65f55a95d5fe202b3dcadcc63c864627",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/9bde71bd65f55a95d5fe202b3dcadcc63c864627"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM3LjI="
+  },
+  {
+    "name": "v0.37.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.37.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.37.1",
+    "commit": {
+      "sha": "f9f76373bb387b78b8198a90cb42cd4b73786efd",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/f9f76373bb387b78b8198a90cb42cd4b73786efd"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM3LjE="
+  },
+  {
+    "name": "v0.37.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.37.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.37.0",
+    "commit": {
+      "sha": "05b121608ec7761243d4d58383c228a55c112d4d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/05b121608ec7761243d4d58383c228a55c112d4d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM3LjA="
+  },
+  {
+    "name": "v0.36.12",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.12",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.12",
+    "commit": {
+      "sha": "686f3cce972e819cdaf9f2ac9fb48b90ca8c2e33",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/686f3cce972e819cdaf9f2ac9fb48b90ca8c2e33"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjEy"
+  },
+  {
+    "name": "v0.36.11",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.11",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.11",
+    "commit": {
+      "sha": "a70518a97f65aeb1d54a0256b9ee24032cdb725b",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a70518a97f65aeb1d54a0256b9ee24032cdb725b"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjEx"
+  },
+  {
+    "name": "v0.36.10",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.10",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.10",
+    "commit": {
+      "sha": "19291801f3c436fd88c144a56506cfe952e33d4e",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/19291801f3c436fd88c144a56506cfe952e33d4e"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjEw"
+  },
+  {
+    "name": "v0.36.9",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.9",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.9",
+    "commit": {
+      "sha": "ad02fb193fe67f5318dd28ca3813ec86ac76cd28",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/ad02fb193fe67f5318dd28ca3813ec86ac76cd28"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2Ljk="
+  },
+  {
+    "name": "v0.36.8",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.8",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.8",
+    "commit": {
+      "sha": "a9530ee53e7241d3367d5b7e04ee7cea30e608b6",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a9530ee53e7241d3367d5b7e04ee7cea30e608b6"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2Ljg="
+  },
+  {
+    "name": "v0.36.7",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.7",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.7",
+    "commit": {
+      "sha": "87ec023e579b4a1d681d88e768cbde9c6c1c8203",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/87ec023e579b4a1d681d88e768cbde9c6c1c8203"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2Ljc="
+  },
+  {
+    "name": "v0.36.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.6",
+    "commit": {
+      "sha": "aa552aa8eaf3a2d2ae20a2898f92ecd1a1bc0967",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/aa552aa8eaf3a2d2ae20a2898f92ecd1a1bc0967"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjY="
+  },
+  {
+    "name": "v0.36.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.5",
+    "commit": {
+      "sha": "dda0fc0b07ddc175afebbb970c20f6b68225027d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/dda0fc0b07ddc175afebbb970c20f6b68225027d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjU="
+  },
+  {
+    "name": "v0.36.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.4",
+    "commit": {
+      "sha": "76ef619f90d74071e866aa0430c90f901801b43b",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/76ef619f90d74071e866aa0430c90f901801b43b"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjQ="
+  },
+  {
+    "name": "v0.36.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.3",
+    "commit": {
+      "sha": "76325ffb01ed7a97f575dadfcf2b4bf645ad16c1",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/76325ffb01ed7a97f575dadfcf2b4bf645ad16c1"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjM="
+  },
+  {
+    "name": "v0.36.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.2",
+    "commit": {
+      "sha": "020ad12980358b8fabb8b9d778e5bc15dd3b211f",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/020ad12980358b8fabb8b9d778e5bc15dd3b211f"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjI="
+  },
+  {
+    "name": "v0.36.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.1",
+    "commit": {
+      "sha": "df7ea9f65e7975d480f43c058776f5c845afc7a3",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/df7ea9f65e7975d480f43c058776f5c845afc7a3"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjE="
+  },
+  {
+    "name": "v0.36.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.36.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.36.0",
+    "commit": {
+      "sha": "b726a38c3d90e0b5679092bbc4bf005045649d2c",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/b726a38c3d90e0b5679092bbc4bf005045649d2c"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM2LjA="
+  },
+  {
+    "name": "v0.35.20",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.20",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.20",
+    "commit": {
+      "sha": "75278ff3acd43b096af0b32d62a2403974981885",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/75278ff3acd43b096af0b32d62a2403974981885"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjIw"
+  },
+  {
+    "name": "v0.35.19",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.19",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.19",
+    "commit": {
+      "sha": "15c9206dd14a7dd536d5793b0e8830245c90ff59",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/15c9206dd14a7dd536d5793b0e8830245c90ff59"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE5"
+  },
+  {
+    "name": "v0.35.18",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.18",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.18",
+    "commit": {
+      "sha": "649cb86e907767e73abd8131235eb3ae98a23d0e",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/649cb86e907767e73abd8131235eb3ae98a23d0e"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE4"
+  },
+  {
+    "name": "v0.35.17",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.17",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.17",
+    "commit": {
+      "sha": "86edaa4df37ac350d079891bb1f5891d0ce9dd9d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/86edaa4df37ac350d079891bb1f5891d0ce9dd9d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE3"
+  },
+  {
+    "name": "v0.35.16",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.16",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.16",
+    "commit": {
+      "sha": "22a16282c076631ba82d3227341925b3eb263f63",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/22a16282c076631ba82d3227341925b3eb263f63"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE2"
+  },
+  {
+    "name": "v0.35.15",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.15",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.15",
+    "commit": {
+      "sha": "5134c629b570c8342467dff4a8d1386acb6740b3",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/5134c629b570c8342467dff4a8d1386acb6740b3"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE1"
+  },
+  {
+    "name": "v0.35.14",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.14",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.14",
+    "commit": {
+      "sha": "2080d01c9c418500486655dd48ba868e5152c7dc",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/2080d01c9c418500486655dd48ba868e5152c7dc"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE0"
+  },
+  {
+    "name": "v0.35.13",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.13",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.13",
+    "commit": {
+      "sha": "75c2ff2f2b25e102783fe1afe6a5723044b76d37",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/75c2ff2f2b25e102783fe1afe6a5723044b76d37"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjEz"
+  },
+  {
+    "name": "v0.35.12",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.12",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.12",
+    "commit": {
+      "sha": "e6026597ad8da5984a8ca903f792e34d59708add",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e6026597ad8da5984a8ca903f792e34d59708add"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjEy"
+  },
+  {
+    "name": "v0.35.11",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.11",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.11",
+    "commit": {
+      "sha": "0dd6a7b1ad8b17d2198dc5627edde072f15afd5a",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/0dd6a7b1ad8b17d2198dc5627edde072f15afd5a"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjEx"
+  },
+  {
+    "name": "v0.35.10",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.10",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.10",
+    "commit": {
+      "sha": "b75131cc58751e28146cf97435be704176e436db",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/b75131cc58751e28146cf97435be704176e436db"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjEw"
+  },
+  {
+    "name": "v0.35.9",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.9",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.9",
+    "commit": {
+      "sha": "3266cdf408adcda81447b1c93230017636512ea5",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/3266cdf408adcda81447b1c93230017636512ea5"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1Ljk="
+  },
+  {
+    "name": "v0.35.8",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.8",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.8",
+    "commit": {
+      "sha": "5e9f671a77cdc23423f1b673bdb5da873fb3a24e",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/5e9f671a77cdc23423f1b673bdb5da873fb3a24e"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1Ljg="
+  },
+  {
+    "name": "v0.35.7",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.7",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.7",
+    "commit": {
+      "sha": "7601de4bd5275047190abae0786596cb2253f219",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/7601de4bd5275047190abae0786596cb2253f219"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1Ljc="
+  },
+  {
+    "name": "v0.35.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.6",
+    "commit": {
+      "sha": "7bf4dcd4c63813d04f0f79a1d80525fc7b661aec",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/7bf4dcd4c63813d04f0f79a1d80525fc7b661aec"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjY="
+  },
+  {
+    "name": "v0.35.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.5",
+    "commit": {
+      "sha": "5dfefe7b03becf5dc7ffdb61bc2ce813667003bd",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/5dfefe7b03becf5dc7ffdb61bc2ce813667003bd"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjU="
+  },
+  {
+    "name": "v0.35.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.4",
+    "commit": {
+      "sha": "e785efec919df8c4302aa455964b4fa2aab1287a",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e785efec919df8c4302aa455964b4fa2aab1287a"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjQ="
+  },
+  {
+    "name": "v0.35.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.3",
+    "commit": {
+      "sha": "0d3e42e2dbf88dbd5077d2fa473368c05b6bbb29",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/0d3e42e2dbf88dbd5077d2fa473368c05b6bbb29"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjM="
+  },
+  {
+    "name": "v0.35.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.2",
+    "commit": {
+      "sha": "300e1e2a9dca27f524ff4bca9e6b665d8e4fa538",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/300e1e2a9dca27f524ff4bca9e6b665d8e4fa538"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjI="
+  },
+  {
+    "name": "v0.35.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.1",
+    "commit": {
+      "sha": "cc1927746e8883322a0b37394887db4d8d6810ae",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/cc1927746e8883322a0b37394887db4d8d6810ae"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjE="
+  },
+  {
+    "name": "v0.35.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.35.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.35.0",
+    "commit": {
+      "sha": "6dc2b1475a144ac22625a4bc88a7bcc927718435",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/6dc2b1475a144ac22625a4bc88a7bcc927718435"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM1LjA="
+  },
+  {
+    "name": "v0.34.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.34.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.34.3",
+    "commit": {
+      "sha": "9f65eb8da7ef0f70aa6af05a094b4ac33619aab4",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/9f65eb8da7ef0f70aa6af05a094b4ac33619aab4"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM0LjM="
+  },
+  {
+    "name": "v0.34.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.34.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.34.2",
+    "commit": {
+      "sha": "346a28fc360ff11bb63675fbbf124c3ace7991d0",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/346a28fc360ff11bb63675fbbf124c3ace7991d0"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM0LjI="
+  },
+  {
+    "name": "v0.34.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.34.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.34.1",
+    "commit": {
+      "sha": "eefeb0e9b4dc8f1e8af98a21076582232f697d8b",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/eefeb0e9b4dc8f1e8af98a21076582232f697d8b"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM0LjE="
+  },
+  {
+    "name": "v0.34.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.34.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.34.0",
+    "commit": {
+      "sha": "52ecbbbf5e798662ae1fc4f5609c88d2fa94fc2d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/52ecbbbf5e798662ae1fc4f5609c88d2fa94fc2d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjM0LjA="
+  },
+  {
+    "name": "v0.33.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.33.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.33.2",
+    "commit": {
+      "sha": "a24638bb405595dcac2060dbb5b8c446a2087b5c",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a24638bb405595dcac2060dbb5b8c446a2087b5c"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMzLjI="
+  },
+  {
+    "name": "v0.33.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.33.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.33.1",
+    "commit": {
+      "sha": "ce32073773ca067598400625c37e8f5998e5e085",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/ce32073773ca067598400625c37e8f5998e5e085"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMzLjE="
+  },
+  {
+    "name": "v0.33.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.33.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.33.0",
+    "commit": {
+      "sha": "dc736c3231250c1e03a13492ae303f58b1fb9f37",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/dc736c3231250c1e03a13492ae303f58b1fb9f37"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMzLjA="
+  },
+  {
+    "name": "v0.32.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.6",
+    "commit": {
+      "sha": "815beccffbdfcbb29649f31997721520fcfa7813",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/815beccffbdfcbb29649f31997721520fcfa7813"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjY="
+  },
+  {
+    "name": "v0.32.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.5",
+    "commit": {
+      "sha": "a7ab8ce2cf05b3f81f390ff339f2c6bc54406054",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a7ab8ce2cf05b3f81f390ff339f2c6bc54406054"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjU="
+  },
+  {
+    "name": "v0.32.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.4",
+    "commit": {
+      "sha": "fed8039a6f08c2816bd18d6377c77b379ccbc345",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/fed8039a6f08c2816bd18d6377c77b379ccbc345"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjQ="
+  },
+  {
+    "name": "v0.32.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.3",
+    "commit": {
+      "sha": "ba46c43c6c6cc0bfa69a59fc1d87d3b0eede1ac6",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/ba46c43c6c6cc0bfa69a59fc1d87d3b0eede1ac6"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjM="
+  },
+  {
+    "name": "v0.32.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.2",
+    "commit": {
+      "sha": "0e3c238655aab0aceb61d9a6b5c913e844733f1f",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/0e3c238655aab0aceb61d9a6b5c913e844733f1f"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjI="
+  },
+  {
+    "name": "v0.32.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.1",
+    "commit": {
+      "sha": "8ee5af619526deca118e048ba64138399cc15939",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/8ee5af619526deca118e048ba64138399cc15939"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjE="
+  },
+  {
+    "name": "v0.32.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.32.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.32.0",
+    "commit": {
+      "sha": "f02beeb7497faf7c030864b43fd56e5f5d879b04",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/f02beeb7497faf7c030864b43fd56e5f5d879b04"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMyLjA="
+  },
+  {
+    "name": "v0.31.11",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.11",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.11",
+    "commit": {
+      "sha": "b8e38d0b5c2c5e990f86041b98c0bee275a8a2ae",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/b8e38d0b5c2c5e990f86041b98c0bee275a8a2ae"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjEx"
+  },
+  {
+    "name": "v0.31.10",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.10",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.10",
+    "commit": {
+      "sha": "7442d12a4d08730f525f3733dce8bfd3b3f6217a",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/7442d12a4d08730f525f3733dce8bfd3b3f6217a"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjEw"
+  },
+  {
+    "name": "v0.31.9",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.9",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.9",
+    "commit": {
+      "sha": "9f83b15fd9dfd8ebfa5957a32d1dcf2d2aa6e716",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/9f83b15fd9dfd8ebfa5957a32d1dcf2d2aa6e716"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjk="
+  },
+  {
+    "name": "v0.31.8",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.8",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.8",
+    "commit": {
+      "sha": "8bed96121e5faca1e4381208f1552bd53755f848",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/8bed96121e5faca1e4381208f1552bd53755f848"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjg="
+  },
+  {
+    "name": "v0.31.7",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.7",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.7",
+    "commit": {
+      "sha": "1f8e5ef8c4d11bbd0e5a42e1e0da1cfc33787fa9",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/1f8e5ef8c4d11bbd0e5a42e1e0da1cfc33787fa9"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjc="
+  },
+  {
+    "name": "v0.31.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.6",
+    "commit": {
+      "sha": "c0333077d046e3170393e27a0a9c38c438242388",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/c0333077d046e3170393e27a0a9c38c438242388"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjY="
+  },
+  {
+    "name": "v0.31.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.5",
+    "commit": {
+      "sha": "9d00b81e09713b5b76d478ca7bb34f627e5b0990",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/9d00b81e09713b5b76d478ca7bb34f627e5b0990"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjU="
+  },
+  {
+    "name": "v0.31.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.4",
+    "commit": {
+      "sha": "69aa1c7bbde16d3b6d588c9a519f0ae3bea8724b",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/69aa1c7bbde16d3b6d588c9a519f0ae3bea8724b"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjQ="
+  },
+  {
+    "name": "v0.31.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.3",
+    "commit": {
+      "sha": "d3af798f9b47b90428dd31b62b8e1236904496be",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/d3af798f9b47b90428dd31b62b8e1236904496be"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjM="
+  },
+  {
+    "name": "v0.31.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.2",
+    "commit": {
+      "sha": "0b2dc10441403d2d1defa3d8170b545257d306cb",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/0b2dc10441403d2d1defa3d8170b545257d306cb"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjI="
+  },
+  {
+    "name": "v0.31.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.1",
+    "commit": {
+      "sha": "c1452529e6dca4c917bc950d6a0420af328f8b68",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/c1452529e6dca4c917bc950d6a0420af328f8b68"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjE="
+  },
+  {
+    "name": "v0.31.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.31.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.31.0",
+    "commit": {
+      "sha": "a5fadd7a938489a7572039a621eabc6fefd4c4b7",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a5fadd7a938489a7572039a621eabc6fefd4c4b7"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMxLjA="
+  },
+  {
+    "name": "v0.30.7",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.7",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.7",
+    "commit": {
+      "sha": "6260fdf3cb30246e8706b53e87b6ee334860e052",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/6260fdf3cb30246e8706b53e87b6ee334860e052"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjc="
+  },
+  {
+    "name": "v0.30.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.6",
+    "commit": {
+      "sha": "a198d0bf2b2f8f236bf7db3b5f56c11bac5e39bb",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a198d0bf2b2f8f236bf7db3b5f56c11bac5e39bb"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjY="
+  },
+  {
+    "name": "v0.30.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.5",
+    "commit": {
+      "sha": "a198d0bf2b2f8f236bf7db3b5f56c11bac5e39bb",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a198d0bf2b2f8f236bf7db3b5f56c11bac5e39bb"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjU="
+  },
+  {
+    "name": "v0.30.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.4",
+    "commit": {
+      "sha": "e95d94ac2c1839c14021d7f12652ab7703fea035",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e95d94ac2c1839c14021d7f12652ab7703fea035"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjQ="
+  },
+  {
+    "name": "v0.30.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.3",
+    "commit": {
+      "sha": "fd49e82778353b2fe5bc52e46ef2c5a5130374c9",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/fd49e82778353b2fe5bc52e46ef2c5a5130374c9"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjM="
+  },
+  {
+    "name": "v0.30.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.2",
+    "commit": {
+      "sha": "a9bcc8d8c9d1b1f3017d5781a0cdc3bee5d3c6f4",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a9bcc8d8c9d1b1f3017d5781a0cdc3bee5d3c6f4"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjI="
+  },
+  {
+    "name": "v0.30.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.1",
+    "commit": {
+      "sha": "b18251a850fde623957a44787e168b4c9dd2ce96",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/b18251a850fde623957a44787e168b4c9dd2ce96"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjE="
+  },
+  {
+    "name": "v0.30.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.30.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.30.0",
+    "commit": {
+      "sha": "98f59370b89f7c60ad89284cde26271cbf04f986",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/98f59370b89f7c60ad89284cde26271cbf04f986"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjMwLjA="
+  },
+  {
+    "name": "v0.29.10",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.10",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.10",
+    "commit": {
+      "sha": "e57d0f1071e66dcdd85c5161c010088c2f776755",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e57d0f1071e66dcdd85c5161c010088c2f776755"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjEw"
+  },
+  {
+    "name": "v0.29.9",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.9",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.9",
+    "commit": {
+      "sha": "ebda22a67e0d0d8b3ff6f5633a3b81e540f6b76d",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/ebda22a67e0d0d8b3ff6f5633a3b81e540f6b76d"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5Ljk="
+  },
+  {
+    "name": "v0.29.8",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.8",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.8",
+    "commit": {
+      "sha": "4ab27d47244475c3338e77dec45339f1bf097dba",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/4ab27d47244475c3338e77dec45339f1bf097dba"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5Ljg="
+  },
+  {
+    "name": "v0.29.7",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.7",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.7",
+    "commit": {
+      "sha": "25fca82b32bf298690e72f3caf5e041c01de24af",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/25fca82b32bf298690e72f3caf5e041c01de24af"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5Ljc="
+  },
+  {
+    "name": "v0.29.6",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.6",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.6",
+    "commit": {
+      "sha": "2b41f41d39f3baa515f79d61a924c65781307fbc",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/2b41f41d39f3baa515f79d61a924c65781307fbc"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjY="
+  },
+  {
+    "name": "v0.29.5",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.5",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.5",
+    "commit": {
+      "sha": "a716f68f679d605b8105b7fd69e63b30634c1e67",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a716f68f679d605b8105b7fd69e63b30634c1e67"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjU="
+  },
+  {
+    "name": "v0.29.4",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.4",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.4",
+    "commit": {
+      "sha": "daabff2426b6cd57b831156e854fbe1581da52fa",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/daabff2426b6cd57b831156e854fbe1581da52fa"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjQ="
+  },
+  {
+    "name": "v0.29.3",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.3",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.3",
+    "commit": {
+      "sha": "9e59ad5bcf7812fa80fa573be2ee4983a3de1bb8",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/9e59ad5bcf7812fa80fa573be2ee4983a3de1bb8"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjM="
+  },
+  {
+    "name": "v0.29.2",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.2",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.2",
+    "commit": {
+      "sha": "8c6d85ac7ef65946db41b90ac3e88c68eebfb293",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/8c6d85ac7ef65946db41b90ac3e88c68eebfb293"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjI="
+  },
+  {
+    "name": "v0.29.1",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.1",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.1",
+    "commit": {
+      "sha": "6a1a0b266704de72eb8f73aeb4ec02613a2e9560",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/6a1a0b266704de72eb8f73aeb4ec02613a2e9560"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjE="
+  },
+  {
+    "name": "v0.29.0",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.29.0",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.29.0",
+    "commit": {
+      "sha": "09ac89f010f657d463e59fdd88f25799e28898a4",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/09ac89f010f657d463e59fdd88f25799e28898a4"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI5LjA="
+  },
+  {
+    "name": "v0.28.24",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.24",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.24",
+    "commit": {
+      "sha": "b463d4b8809da7019c9b333c58c9cc6abe9ae08e",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/b463d4b8809da7019c9b333c58c9cc6abe9ae08e"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjI0"
+  },
+  {
+    "name": "v0.28.23",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.23",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.23",
+    "commit": {
+      "sha": "6968624f23f442a8ff0d90f87172da716c55d4f5",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/6968624f23f442a8ff0d90f87172da716c55d4f5"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjIz"
+  },
+  {
+    "name": "v0.28.22",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.22",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.22",
+    "commit": {
+      "sha": "45b55b2fb1b22e55747f1849f3141b330f04f6eb",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/45b55b2fb1b22e55747f1849f3141b330f04f6eb"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjIy"
+  },
+  {
+    "name": "v0.28.21",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.21",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.21",
+    "commit": {
+      "sha": "c87002489090694d1f009fe252756f42ddb81d79",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/c87002489090694d1f009fe252756f42ddb81d79"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjIx"
+  },
+  {
+    "name": "v0.28.20",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.20",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.20",
+    "commit": {
+      "sha": "a0b5c26d412ffca7a724d6482e90eccdc5705073",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/a0b5c26d412ffca7a724d6482e90eccdc5705073"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjIw"
+  },
+  {
+    "name": "v0.28.19",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.19",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.19",
+    "commit": {
+      "sha": "e82b63b8527a57a5ddb57461caab53c5f329fe3f",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/e82b63b8527a57a5ddb57461caab53c5f329fe3f"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjE5"
+  },
+  {
+    "name": "v0.28.18",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.18",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.18",
+    "commit": {
+      "sha": "1030a87388145f219d8c92271f97087e4d78c211",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/1030a87388145f219d8c92271f97087e4d78c211"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjE4"
+  },
+  {
+    "name": "v0.28.17",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.17",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.17",
+    "commit": {
+      "sha": "15f054d02531099e560fcd0d3ad1a67326829aee",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/15f054d02531099e560fcd0d3ad1a67326829aee"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjE3"
+  },
+  {
+    "name": "v0.28.16",
+    "zipball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/zipball/refs/tags/v0.28.16",
+    "tarball_url": "https://api.github.com/repos/gruntwork-io/terragrunt/tarball/refs/tags/v0.28.16",
+    "commit": {
+      "sha": "85b5b4ceecdd782e6f282aa1059db4ecec87ec29",
+      "url": "https://api.github.com/repos/gruntwork-io/terragrunt/commits/85b5b4ceecdd782e6f282aa1059db4ecec87ec29"
+    },
+    "node_id": "MDM6UmVmNTk1MjIxNDk6cmVmcy90YWdzL3YwLjI4LjE2"
+  }
+]

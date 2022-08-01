@@ -5,4 +5,4 @@ bin/-*
 /use-gnupg
 /use-gpgv
 .*.swp
-/cache
+/cache/list_remote_2*
