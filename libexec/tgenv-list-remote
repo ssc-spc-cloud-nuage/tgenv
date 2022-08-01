@@ -73,9 +73,8 @@ fi
 
 if [ -f ${TGENV_ROOT}/cache/list_remote_${today} ]
 then
-  log 'debug' 'Using cached list of terragrunt versions...';
-  echo "Using today's cached list of terragrunt versions... delete ${TGENV_ROOT}/cache to force downloading full list from github."
-  print=`cat ${TGENV_ROOT}/cache/list_remote_${today}`
+  log 'debug' "Using today's cached list of terragrunt versions... delete ${TGENV_ROOT}/cache to force downloading full list from github."
+  print=$(cat ${TGENV_ROOT}/cache/list_remote_${today})
 else
   log 'debug' 'Cached list of terragrunt versions does not exists, Pulling from github API and saving to cache...'
   curl -sf $link_release -o ${TGENV_ROOT}/cache/list_remote_${today}
