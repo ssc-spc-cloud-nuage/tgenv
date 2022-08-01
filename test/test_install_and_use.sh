@@ -86,28 +86,14 @@ log 'info' '### Test Suite: Install and Use';
 
 tests__desc=(
   'latest version'
-  'latest possibly-unstable version'
-  'latest alpha'
-  'latest beta'
-  'latest rc'
-  'latest possibly-unstable version from 0.11'
-  '0.11.15-oci'
   'latest version matching regex'
   'specific version'
-  'specific version with v prefix'
 );
 
 tests__kv=(
   "$(tgenv list-remote | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+$" | head -n 1),latest"
-  "$(tgenv list-remote | head -n 1),latest:"
-  "$(tgenv list-remote | grep 'alpha' | head -n 1),latest:alpha"
-  "$(tgenv list-remote | grep 'beta' | head -n 1),latest:beta"
-  "$(tgenv list-remote | grep 'rc' | head -n 1),latest:rc"
-  "$(tgenv list-remote | grep '^0\.11\.' | head -n 1),latest:^0.11."
-  '0.11.15-oci,0.11.15-oci'
-  '0.8.8,latest:^0.8'
-  '0.7.13,0.7.13'
-  '0.14.6,v0.14.6'
+  '0.36.8,latest:^0.36'
+  '0.35.3,0.35.3'
 );
 
 tests_count=${#tests__desc[@]};

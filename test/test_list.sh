@@ -53,7 +53,7 @@ declare -a errors=();
 log 'info' '### List local versions';
 cleanup || log 'error' "Cleanup failed?!";
 
-for v in 0.7.2 0.7.13 0.9.1 0.9.2 v0.9.11 0.14.6; do
+for v in 0.38.6 0.35.3 0.29.4; do
   log 'info' "## Installing version ${v} to construct list";
   tgenv install "${v}" \
     && log 'debug' "Install of version ${v} succeeded" \
@@ -65,17 +65,14 @@ tgenv list \
   && log 'debug' "List succeeded with no default set" \
   || error_and_proceed "List failed with no default set";
 
-tgenv use 0.14.6;
+tgenv use 0.29.4;
 
 log 'info' '## Comparing "tgenv list" with default set';
 result="$(tgenv list)";
 expected="$(cat << EOS
-* 0.14.6 (set by $(tgenv version-file))
-  0.9.11
-  0.9.2
-  0.9.1
-  0.7.13
-  0.7.2
+  0.38.6
+  0.35.3
+* 0.29.4 (set by $(tgenv version-file))
 EOS
 )";
 
