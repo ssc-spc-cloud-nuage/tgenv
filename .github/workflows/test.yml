@@ -3,16 +3,16 @@ name: 'Test'
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
   pull_request:
     branches:
-      - 'master'
+      - 'main'
   workflow_dispatch:
 
 jobs:
 
   # Only checking latest Linux/UNIX on pulls to save execution times
-  test-master-pulls:
+  test-main-pulls:
     if: github.event_name == 'pull_request'
     runs-on: "${{ matrix.os }}"
     strategy:
@@ -30,9 +30,9 @@ jobs:
         run: './test/run.sh'
         shell: 'bash'
 
-  # When we push to master, test everything in order to guarantee releases
-  test-master-pushes:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+  # When we push to main, test everything in order to guarantee releases
+  test-main-pushes:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: "${{ matrix.os }}"
     strategy:
       matrix:
