@@ -68,7 +68,7 @@ print=$(curl -sf $link_release)
 
 return_code=$?
 if [ $return_code -eq 22 ];then
-  log 'error' "Failed to get list verion on $link_release"
+  log 'error' "Failed to get list version on $link_release"
   print=`cat ${TGENV_ROOT}/list_all_versions_offline`
 fi
 
